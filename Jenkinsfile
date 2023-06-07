@@ -17,6 +17,10 @@ pipeline {
             steps {
                   sh "make"
             }
+		  steps {
+                  sh "./mvnw clean install site surefire-report:report"
+			   sh "tree"
+            }
         }
         
         stage("Upload to artifactory") {
