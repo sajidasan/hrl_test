@@ -1,4 +1,4 @@
-def repo_url = 'https://github.com/sajidasan/hrllabs.git'
+def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
 def build_file_name = 'hello'
 def artifactory_target = 'c_repo-generic-local/froggy-files3/'
