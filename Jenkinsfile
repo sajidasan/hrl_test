@@ -6,6 +6,9 @@ def email_to = 'saji.dasan010@gmail.com'
 
 pipeline {
     agent any
+    tools {
+		maven '3.9.2'
+		}
     stages {
         stage("Clone code from github"){
             steps {
@@ -15,8 +18,8 @@ pipeline {
         
         stage("Build C code"){
             steps {
-			   sh "./mvn clean install site surefire-report:report"
-			   sh "tree"
+			   sh 'mvn clean install site surefire-report:report'
+			   sh 'tree'
             }
         }
         
