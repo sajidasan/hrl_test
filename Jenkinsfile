@@ -15,7 +15,6 @@ pipeline {
         
         stage("Build C code"){
             steps {
-                  sh "make"
 			   sh "./mvn clean install site surefire-report:report"
 			   sh "tree"
             }
