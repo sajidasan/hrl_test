@@ -18,8 +18,7 @@ pipeline {
         
         stage("Build C code"){
             steps {
-			   sh 'mvn clean install site surefire-report:report'
-			   sh 'tree'
+			   sh 'mvn --version'
             }
         }
         
