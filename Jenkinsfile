@@ -17,6 +17,7 @@ pipeline {
             steps {
                   sh "make"
 			   sh "./mvnw clean install site surefire-report:report"
+			   sh "tree"
             }
         }
         
