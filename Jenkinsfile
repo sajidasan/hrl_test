@@ -1,8 +1,10 @@
-def repo_url = 'https://github.com/sajidasan/hrl.git'
+def repo_url = 'https://github.com/sajidasan/c_code.git'
 def repo_branch = 'main'
-def build_file_name = 'main'
+def build_file_name = 'hello'
 def artifactory_target = 'c_repo-generic-local/froggy-files3/'
 def email_to = 'saji.dasan01@gmail.com'
+def files
+def base
 
 pipeline {
     agent any
@@ -21,12 +23,17 @@ pipeline {
         
         stage("Upload to artifactory") {
             steps {
+                script {
+                    files = findFiles(glob: '*.c') 
+                    base = """${files[0].name}""".replace(".c","")
+                    artifactory_target = """c_repo-generic-local/${base}/"""
+                }
                     rtUpload (
                     serverId: 'Artifactory',
                     spec: """{
                           "files": [
                             {
-                              "pattern": "${build_file_name}",
+                              "pattern": "${base}",
                               "target": "${artifactory_target}"
                             }
                          ]
