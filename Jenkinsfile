@@ -1,6 +1,6 @@
 def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
-def build_file_name = 'helloworld'
+def build_file_name = 'hello'
 def artifactory_target = 'c_repo-generic-local/froggy-files3/'
 def email_to = 'saji.dasan010@gmail.com'
 
