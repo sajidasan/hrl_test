@@ -1,4 +1,4 @@
-def repo_url = 'https://github.com/sajidasan/c_code.git'
+def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
 def artifactory_repo_name = 'c_repo-generic-local'
 def email_to = 'saji.dasan01gmail.com'
