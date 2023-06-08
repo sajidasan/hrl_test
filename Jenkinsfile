@@ -2,13 +2,10 @@ def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
 def build_file_name = 'hello'
 def artifactory_target = 'c_repo-generic-local/froggy-files3/'
-def email_to = 'saji.dasan01@gmail.com'
+def email_to = 'saji.dasan010@gmail.com'
 
 pipeline {
     agent any
-    tools {
-		maven '3.9.2'
-		}
     stages {
         stage("Clone code from github"){
             steps {
@@ -18,7 +15,7 @@ pipeline {
         
         stage("Build C code"){
             steps {
-			   sh "make"
+                  sh "make"
             }
         }
         
