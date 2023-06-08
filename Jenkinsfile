@@ -1,7 +1,6 @@
-def repo_url = 'https://github.com/sajidasan/c_code.git'
+def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
-def build_file_name = 'hello'
-def artifactory_target = 'c_repo-generic-local/froggy-files3/'
+def artifactory_repo_name = 'c_repo-generic-local'
 def email_to = 'saji.dasan01@gmail.com'
 def files
 def base
@@ -20,14 +19,17 @@ pipeline {
                   sh "make"
             }
         }
-        
-        stage("Upload to artifactory") {
+        stage("Parse filename") {
             steps {
                 script {
                     files = findFiles(glob: '*.c') 
-                    base = """${files[0].name}""".replace(".c","")
-                    artifactory_target = """c_repo-generic-local/${base}/"""
+                    base = files[0].name.replace(".c","")
+                    artifactory_target = """${artifactory_repo_name}/${base}/"""
                 }
+            }
+        }
+        stage("Upload to artifactory") {
+            steps {
                     rtUpload (
                     serverId: 'Artifactory',
                     spec: """{
