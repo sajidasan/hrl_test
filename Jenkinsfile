@@ -49,12 +49,11 @@ pipeline {
         always {
             cleanWs notFailBuild: true
         }
-        /*success {
-            emailext body: 'Job successfully built',
-            subject: 'Artifactory build - success',
-            to: email_to
-
-        }*/
+        //success {
+        //    emailext body: 'Job successfully built',
+        //    subject: 'Artifactory build - success',
+        //    to: email_to
+        //}
         failure {
             emailext body: 'Job failed to build',
             subject: 'Artifactory build - fail',
