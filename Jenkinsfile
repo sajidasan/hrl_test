@@ -9,18 +9,18 @@ def base
 pipeline {
     agent any
     stages {
-        stage("Clone code from github"){
+        stage("Clone Code from GitHub"){
             steps {
                 git branch: repo_branch, url: repo_url
             }
         }
         
-        stage("Build C code"){
+        stage("Build C Code"){
             steps {
                   sh "make"
             }
         }
-        stage("Parse filename") {
+        stage("Parse Filename") {
             steps {
                 script {
                     files = findFiles(glob: '*.c') 
@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-        stage("Upload to artifactory") {
+        stage("Upload to Artifactory") {
             steps {
                     rtUpload (
                     serverId: 'Artifactory',
