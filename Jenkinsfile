@@ -1,5 +1,7 @@
 def repo_url = 'https://github.com/sajidasan/c_code.git'
 def repo_branch = 'main'
+def build_file_name = 'hello'
+def artifactory_target = 'c_repo-generic-local/froggy-files3/'
 def email_to = 'saji.dasan01@gmail.com'
 def files
 def base
