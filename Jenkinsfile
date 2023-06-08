@@ -1,7 +1,7 @@
 def repo_url = 'https://github.com/sajidasan/hrl.git'
 def repo_branch = 'main'
 def artifactory_repo_name = 'c_repo-generic-local'
-def email_to = 'saji.dasan01gmail.com'
+def email_to = 'saji.dasan01@gmail.com'
 def date = String.format('%tF.%<tH:%<tM', java.time.LocalDateTime.now())
 def files
 def base
