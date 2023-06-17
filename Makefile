@@ -1,12 +1,12 @@
-all: hello
+all: main
 
-hello: hello.o
-	gcc -Wall -std=c99 -o hello hello.o
+main: main.o
+	gcc -Wall -std=c99 -o main main.o
 
-hello.o: hello.c
-	gcc -Wall -std=c99 -c hello.c
+main.o: main.c
+	gcc -Wall -std=c99 -c main.c
 
 .PHONY: clean
 
 clean:
-	rm -f hello hello.o
+	rm -f main main.o
